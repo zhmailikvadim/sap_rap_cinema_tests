@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Messages</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Film Group &amp;1 doesn&apos;t exist.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>End Date must be greater then Start Date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Start Date must be greater then today.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Film Date must be greater then Start Date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>Film Date must be less or equal to End Date.</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZISS_CINEMA_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Status is not valid.</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>
