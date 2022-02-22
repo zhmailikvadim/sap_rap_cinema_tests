@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access control for ZISS_C_FILM'
+@MappingRole: true
+define role ZISS_C_FILM {
+    grant
+        select
+            on
+                ZISS_C_FILM
+                    where
+                        inheriting conditions from entity ZISS_I_FILM;
+                        
+}

@@ -1,0 +1,10 @@
+@EndUserText.label: 'Access control for ZISS_I_FILM'
+@MappingRole: true
+define role ZISS_I_FILM {
+    grant
+        select
+            on
+              ZISS_I_FILM
+                  where 
+                     true;                    
+}

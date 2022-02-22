@@ -1,4 +1,91 @@
-unmanaged;
-define behavior for ZISS_I_FILM
+managed; // implementation in class zbp_iss_i_film unique;
+with draft;
+
+define behavior for ZISS_I_FILM alias Film
+implementation in class zbp_iss_i_film unique
+persistent table ziss_film
+draft table ziss_film_d
+lock master total etag ChangeTime
+authorization master ( global, instance )
+etag master ChangeTime
+{
+  create ( features : global );
+  update;
+  delete;
+
+  field ( numbering : managed, readonly ) FilmUUID;
+  field ( readonly )  FilmID, ChangeTime, ChangedBy, CreationTime, CreatedBy;
+
+  // actions
+  action ( features : instance ) acceptFilm result [1] $self;
+  action ( features : instance ) cancelFilm result [1] $self;
+
+  determination set_first_status on modify { create; }
+  determination calculateFilmID on modify { create; }
+
+  validation validateGroup on save { create; field GroupID; }
+  validation validateDates on save { create; field StartDate, EndDate; }
+  validation validateStatus on save { create; field Status; }
+
+  association _Booking { create; with draft; }
+
+
+  mapping for ziss_film
   {
+    FilmUUID = filmuuid;
+    FilmID = filmid;
+    FilmName = filmname;
+    GroupID = groupid;
+    Status = status;
+    StartDate = startdate;
+    EndDate = enddate;
+    FilmTime = filmtime;
+    Country = country;
+    Director = director;
+    Price = price;
+    Currency = currency;
+    ChangeTime = changetime;
+    ChangedBy = changedby;
+    CreationTime = creationtime;
+    CreatedBy = createdby;
   }
+
+}
+
+define behavior for ZISS_I_BOOKING alias Booking
+implementation in class zbp_iss_i_booking unique
+persistent table ziss_booking
+draft table ziss_booking_d
+etag master ChangeTime
+lock dependent by _Film
+authorization dependent by _Film
+//etag master <field_name>
+{
+  update;
+  delete;
+
+  association _Film { with draft; }
+
+  field ( numbering : managed, readonly ) BookingUUID;
+  field ( readonly ) BookingID, CreatedBy, CreationTime, ChangedBy, ChangeTime, FilmUUID;
+
+  determination calculateBookingID on modify { create; }
+  determination calculateAmount on modify { field Quantity; }
+
+  validation validateFilmDate on save { field FilmDate; }
+
+  mapping for ziss_booking
+  {
+    FilmUUID = filmuuid;
+    BookingUUID = bookinguuid;
+    BookingID = bookingid;
+    Quantity = quantity;
+    FilmDate = filmdate;
+    NetAmount = netamount;
+    Currency = currency;
+    CreatedBy = createdby;
+    CreationTime = creationtime;
+    ChangedBy = changedby;
+    ChangeTime = changetime;
+  }
+}

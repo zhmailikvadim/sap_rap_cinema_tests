@@ -1,0 +1,7 @@
+@EndUserText.label: 'Serv Definition for Cinema App'
+define service ZISS_UI_FILM {
+  expose ZISS_C_FILM as Film;
+  expose ZISS_C_BOOKING as Booking;
+  expose ZISS_I_GROUP as FGroup;
+  expose I_Currency as Currency;
+}

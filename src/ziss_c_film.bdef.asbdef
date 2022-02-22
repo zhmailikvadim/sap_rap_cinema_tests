@@ -1,4 +1,24 @@
-unmanaged;
-define behavior for ZISS_C_FILM
-  {
-  }
+projection;
+use draft;
+//strict; //Comment this line in to enable strict mode. The strict mode is prerequisite to be future proof regarding syntax and to be able to release your BO.
+
+
+define behavior for ZISS_C_FILM alias Film
+{
+  use create;
+  use update;
+  use delete;
+
+  use association _Booking { create; with draft; }
+
+   use action acceptFilm;
+   use action cancelFilm;
+}
+
+define behavior for ZISS_C_BOOKING alias Booking
+{
+  use update;
+  use delete;
+
+  use association _Film { with draft; }
+}
