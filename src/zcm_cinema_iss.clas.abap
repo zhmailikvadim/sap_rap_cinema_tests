@@ -74,7 +74,7 @@ CLASS zcm_cinema_iss DEFINITION
       BEGIN OF not_authorized,
         msgid TYPE symsgid VALUE 'ZISS_CINEMA_MSG',
         msgno TYPE symsgno VALUE '020',
-        attr1 TYPE scx_attrname VALUE 'Unauthorized',
+        attr1 TYPE scx_attrname VALUE '',
         attr2 TYPE scx_attrname VALUE '',
         attr3 TYPE scx_attrname VALUE '',
         attr4 TYPE scx_attrname VALUE '',

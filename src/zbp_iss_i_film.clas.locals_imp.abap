@@ -289,15 +289,18 @@ CLASS lhc_Film IMPLEMENTATION.
   METHOD is_create_granted.
     AUTHORITY-CHECK OBJECT 'Z_AUTH_TST' ID 'ACTVT' FIELD '01'.
     create_granted = COND #( WHEN sy-subrc = 0 THEN abap_true ELSE abap_false ).
+    "create_granted = abap_true.
   ENDMETHOD.
 
   METHOD is_delete_granted.
     AUTHORITY-CHECK OBJECT 'Z_AUTH_TST' ID 'ACTVT' FIELD '06'.
     delete_granted = COND #( WHEN sy-subrc = 0 THEN abap_true ELSE abap_false ).
+    "delete_granted = abap_true.
   ENDMETHOD.
 
   METHOD is_update_granted.
     AUTHORITY-CHECK OBJECT 'Z_AUTH_TST' ID 'ACTVT' FIELD '02'.
     update_granted = COND #( WHEN sy-subrc = 0 THEN abap_true ELSE abap_false ).
+    "update_granted = abap_true.
   ENDMETHOD.
 ENDCLASS.

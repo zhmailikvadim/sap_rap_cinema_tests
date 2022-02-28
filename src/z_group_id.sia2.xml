@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA2" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA2>
+    <NAME>Z_GROUP_ID</NAME>
+    <DESCRIPTION>Z_GROUP_ID</DESCRIPTION>
+    <ID>Z_GROUP_ID</ID>
+    <AGGREGATION_CATEGORY>1</AGGREGATION_CATEGORY>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <FIELDS>
+     <item>
+      <FIELD_NAME>Z_GROUP_ID</FIELD_NAME>
+      <TEXT>ZISS_GROUP_ID</TEXT>
+     </item>
+    </FIELDS>
+    <OBJECT_VISIBILITY>
+     <IS_CREATE_BC_VISIBLE>X</IS_CREATE_BC_VISIBLE>
+     <IS_ASSIGN_TO_BC_VISIBLE>X</IS_ASSIGN_TO_BC_VISIBLE>
+    </OBJECT_VISIBILITY>
+   </SIA2>
+  </asx:values>
+ </asx:abap>
+</abapGit>
